@@ -5,10 +5,15 @@
   padding: 16px;
   position: relative;
   box-shadow: 0 4px 8px grey;
+  overflow: auto;
+}
+
+.todo-item-container h3 {
+  margin: 5px 0px;
 }
 
 .buttons-container {
-  position: absolute;
+  float: right;
   right: 12px;
   bottom: 12px;
 }

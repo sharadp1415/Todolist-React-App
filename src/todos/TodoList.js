@@ -8,13 +8,15 @@ import { removeTodo, markTodoAsCompleted } from "./actions";
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed }) => (
   <div className="list-wrapper">
     <NewTodoForm />
-    {todos.map((todo) => (
-      <TodoListItem
-        todo={todo}
-        onRemovePressed={onRemovePressed}
-        onCompletedPressed={onCompletedPressed}
-      />
-    ))}
+    {todos.map((todo) =>
+      !todo.isCompleted ? (
+        <TodoListItem
+          todo={todo}
+          onRemovePressed={onRemovePressed}
+          onCompletedPressed={onCompletedPressed}
+        />
+      ) : null
+    )}
   </div>
 );
 
