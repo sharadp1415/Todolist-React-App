@@ -1,4 +1,5 @@
-.label {
+.completed-list-container {
+  /* display: inline-block; */
   background: #fff;
   border-radius: 8px;
   margin-top: 70px;
@@ -7,4 +8,23 @@
   box-shadow: 0 4px 8px grey;
   font-size: larger;
   font-weight: 700;
+  overflow: auto;
+}
+
+.label {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.clear-all-button {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  float: right;
+  vertical-align: top;
+  /* display: inline-block; */
+  background-color: #ee2222;
 }

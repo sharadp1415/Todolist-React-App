@@ -24,3 +24,9 @@ export const markTodoAsCompleted = (text) => ({
   type: MARK_TODO_AS_COMPLETED,
   payload: { text },
 });
+
+export const REMOVE_COMPLETED_TODOS = "REMOVE_COMPLETED_TODOS";
+export const removeCompletedTodos = () => ({
+  type: REMOVE_COMPLETED_TODOS,
+  payload: null,
+});

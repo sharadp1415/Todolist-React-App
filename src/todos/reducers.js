@@ -1,4 +1,9 @@
-import { CREATE_TODO, REMOVE_TODO, MARK_TODO_AS_COMPLETED } from "./actions";
+import {
+  CREATE_TODO,
+  REMOVE_TODO,
+  MARK_TODO_AS_COMPLETED,
+  REMOVE_COMPLETED_TODOS,
+} from "./actions";
 
 //called whenever any action is triggered in the application
 export const todos = (state = [], action) => {
@@ -39,6 +44,10 @@ export const todos = (state = [], action) => {
 
       state.unshift(selectedTodo);
       return state;
+    }
+
+    case REMOVE_COMPLETED_TODOS: {
+      return state.filter((todo) => !todo.isCompleted);
     }
 
     default:
