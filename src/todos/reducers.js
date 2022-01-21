@@ -6,9 +6,10 @@ export const todos = (state = [], action) => {
 
   switch (type) {
     case CREATE_TODO: {
-      const { text } = payload;
+      const { text, time } = payload;
       const newTodo = {
         text,
+        time,
         isCompleted: false,
       };
 
@@ -22,13 +23,22 @@ export const todos = (state = [], action) => {
 
     case MARK_TODO_AS_COMPLETED: {
       const { text } = payload;
-      return state.map((todo) => {
+      let selectedTodo;
+
+      console.log(selectedTodo);
+      console.log(state);
+
+      state = state.filter((todo) => {
         if (todo.text === text) {
-          return { ...todo, isCompleted: true };
+          selectedTodo = { ...todo, isCompleted: true };
+          return false;
         } else {
-          return todo;
+          return true;
         }
       });
+
+      state.unshift(selectedTodo);
+      return state;
     }
 
     default:

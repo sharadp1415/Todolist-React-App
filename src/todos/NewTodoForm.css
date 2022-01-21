@@ -1,7 +1,7 @@
 .new-todo-form {
   border-radius: 8px;
   padding: 16px;
-  text-align: center;
+  data-align: center;
   box-shadow: 0 4px 8px grey;
 }
 

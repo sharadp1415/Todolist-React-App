@@ -1,9 +1,17 @@
 export const CREATE_TODO = "CREATE_TODO";
 //action creator
-export const createTodo = (text) => ({
-  type: CREATE_TODO,
-  payload: { text },
-});
+export const createTodo = ({ inputValue, inputTime }) => {
+  const text = inputValue;
+  const time = inputTime;
+
+  return {
+    type: CREATE_TODO,
+    payload: {
+      text,
+      time,
+    },
+  };
+};
 
 export const REMOVE_TODO = "REMOVE_TODO";
 export const removeTodo = (text) => ({

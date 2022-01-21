@@ -12,10 +12,16 @@
   margin: 5px 0px;
 }
 
+.due-date {
+  display: inline-block;
+  font-size: 16px;
+  padding: 8px 0px;
+}
+
 .buttons-container {
   float: right;
-  right: 12px;
-  bottom: 12px;
+  /* right: 12px;
+  bottom: 12px; */
 }
 
 button {

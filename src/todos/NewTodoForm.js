@@ -5,6 +5,7 @@ import { createTodo } from "./actions";
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
   const [inputValue, setInputValue] = useState("");
+  const [inputTime, setInputTime] = useState("");
   return (
     <div className="new-todo-form">
       <input
@@ -14,14 +15,21 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Type Your New Todo Here"
       />
+      <input
+        className="new-todo-input"
+        type="time"
+        value={inputTime}
+        onChange={(e) => setInputTime(e.target.value)}
+      />
       <button
         onClick={() => {
           const isDuplicateText = todos.some(
             (todo) => todo.text === inputValue
           );
           if (!isDuplicateText) {
-            onCreatePressed(inputValue);
+            onCreatePressed({ inputValue, inputTime });
             setInputValue("");
+            setInputTime("");
           }
         }}
         className="new-todo-button"
@@ -39,7 +47,7 @@ const mapStateToProps = (state) => ({
 
 //dispatch is a function that allows componenets to trigger actions.
 const mapDispatchToProps = (dispatch) => ({
-  onCreatePressed: (text) => dispatch(createTodo(text)),
+  onCreatePressed: (data) => dispatch(createTodo(data)),
 });
 
 //pass in component in second set of parameters
