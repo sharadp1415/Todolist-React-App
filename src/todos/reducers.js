@@ -47,7 +47,11 @@ export const todos = (state = [], action) => {
     }
 
     case REMOVE_COMPLETED_TODOS: {
-      return state.filter((todo) => !todo.isCompleted);
+      if (window.confirm("Are You Sure?")) {
+        return state.filter((todo) => !todo.isCompleted);
+      } else {
+        return state;
+      }
     }
 
     default:
