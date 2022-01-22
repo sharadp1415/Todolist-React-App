@@ -6,6 +6,7 @@ import { createTodo } from "./actions";
 const NewTodoForm = ({ todos, onCreatePressed }) => {
   const [inputValue, setInputValue] = useState("");
   const [inputTime, setInputTime] = useState("");
+  const [inputDate, setInputDate] = useState("");
   return (
     <div className="new-todo-form">
       <input
@@ -21,15 +22,22 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
         value={inputTime}
         onChange={(e) => setInputTime(e.target.value)}
       />
+      <input
+        className="new-todo-date"
+        type="date"
+        value={inputDate}
+        onChange={(e) => setInputDate(e.target.value)}
+      />
       <button
         onClick={() => {
           const isDuplicateText = todos.some(
             (todo) => todo.text === inputValue
           );
           if (!isDuplicateText) {
-            onCreatePressed({ inputValue, inputTime });
+            onCreatePressed({ inputValue, inputTime, inputDate });
             setInputValue("");
             setInputTime("");
+            setInputDate("");
           }
         }}
         className="new-todo-button"

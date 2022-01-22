@@ -1,14 +1,16 @@
 export const CREATE_TODO = "CREATE_TODO";
 //action creator
-export const createTodo = ({ inputValue, inputTime }) => {
+export const createTodo = ({ inputValue, inputTime, inputDate }) => {
   const text = inputValue;
   const time = inputTime;
+  const date = inputDate;
 
   return {
     type: CREATE_TODO,
     payload: {
       text,
       time,
+      date,
     },
   };
 };

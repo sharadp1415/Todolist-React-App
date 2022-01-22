@@ -7,7 +7,8 @@
 }
 
 .new-todo-input,
-.new-todo-clock {
+.new-todo-clock,
+.new-todo-date {
   font-size: 16px;
   padding: 8px;
   border: none;
@@ -19,28 +20,48 @@
   color: white;
 }
 
-.new-todo-clock {
-  display: inline-block;
+.new-todo-input {
+  width: 100%;
+  margin-right: 0;
+  display: block;
+  box-sizing: border-box;
 }
 
 .new-todo-input::placeholder {
   color: white;
 }
 
+.new-todo-clock {
+  display: inline-block;
+  width: 40%;
+  margin-right: 10px;
+}
+
 .new-todo-clock::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
+}
+
+.new-todo-date {
+  display: inline-block;
+  width: 32%;
+}
+
+.new-todo-date::-webkit-calendar-picker-indicator {
   filter: invert(100%);
 }
 
 .new-todo-button {
   font-size: 16px;
-  padding: 8px;
+  padding: 9px;
   border: none;
   border-radius: 8px;
   outline: none;
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 10px;
   width: 20%;
   background-color: #ffda33;
+  margin-top: 7px;
+  border-bottom: 2px solid #facf0e;
 }
 
 .new-todo-button:hover {

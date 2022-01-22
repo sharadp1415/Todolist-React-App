@@ -12,10 +12,11 @@ export const todos = (state = [], action) => {
 
   switch (type) {
     case CREATE_TODO: {
-      const { text, time } = payload;
+      const { text, time, date } = payload;
       const newTodo = {
         text,
         time,
+        date,
         isCompleted: false,
         isOverdue: false,
       };
@@ -37,7 +38,7 @@ export const todos = (state = [], action) => {
 
       state = state.filter((todo) => {
         if (todo.text === text) {
-          selectedTodo = { ...todo, isCompleted: true };
+          selectedTodo = { ...todo, isCompleted: true, isOverdue: false };
           return false;
         } else {
           return true;
@@ -57,6 +58,7 @@ export const todos = (state = [], action) => {
     }
 
     case CHECK_OVERDUE_TODOS: {
+      break;
     }
 
     default:
