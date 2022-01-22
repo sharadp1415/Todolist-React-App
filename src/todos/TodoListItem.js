@@ -2,6 +2,10 @@ import React from "react";
 import "./TodoListItem.css";
 
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => {
+  const timer = setInterval(() => {
+    const date = new Date.now();
+  }, 1000);
+
   return (
     <div className="todo-item-container">
       <h3>{todo.text}</h3>

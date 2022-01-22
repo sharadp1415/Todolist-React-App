@@ -3,6 +3,7 @@ import {
   REMOVE_TODO,
   MARK_TODO_AS_COMPLETED,
   REMOVE_COMPLETED_TODOS,
+  CHECK_OVERDUE_TODOS,
 } from "./actions";
 
 //called whenever any action is triggered in the application
@@ -16,6 +17,7 @@ export const todos = (state = [], action) => {
         text,
         time,
         isCompleted: false,
+        isOverdue: false,
       };
 
       return state.concat(newTodo);
@@ -47,11 +49,14 @@ export const todos = (state = [], action) => {
     }
 
     case REMOVE_COMPLETED_TODOS: {
-      if (window.confirm("Are You Sure?")) {
+      if (window.confirm("Confirm to Remove All Completed Todos.")) {
         return state.filter((todo) => !todo.isCompleted);
       } else {
         return state;
       }
+    }
+
+    case CHECK_OVERDUE_TODOS: {
     }
 
     default:

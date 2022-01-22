@@ -1,18 +1,34 @@
 .new-todo-form {
   border-radius: 8px;
   padding: 16px;
-  data-align: center;
-  box-shadow: 0 4px 8px grey;
+  box-shadow: 0 2px 4px grey;
+  background-color: #292929;
+  color: white;
 }
 
-.new-todo-input {
+.new-todo-input,
+.new-todo-clock {
   font-size: 16px;
   padding: 8px;
   border: none;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #151515;
   border-radius: 8px;
   width: 70%;
   outline: none;
+  background-color: #292929;
+  color: white;
+}
+
+.new-todo-clock {
+  display: inline-block;
+}
+
+.new-todo-input::placeholder {
+  color: white;
+}
+
+.new-todo-clock::-webkit-calendar-picker-indicator {
+  filter: invert(100%);
 }
 
 .new-todo-button {
@@ -24,9 +40,9 @@
   cursor: pointer;
   margin-left: 8px;
   width: 20%;
-  background-color: #22ee22;
+  background-color: #ffda33;
 }
 
 .new-todo-button:hover {
-  background-color: #31ff31;
+  background-color: #facf0e;
 }

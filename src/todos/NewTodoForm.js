@@ -16,7 +16,7 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
         placeholder="Type Your New Todo Here"
       />
       <input
-        className="new-todo-input"
+        className="new-todo-clock"
         type="time"
         value={inputTime}
         onChange={(e) => setInputTime(e.target.value)}
