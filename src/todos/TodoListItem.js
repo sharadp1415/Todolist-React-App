@@ -22,7 +22,10 @@ const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => {
   return (
     <div className="todo-item-container" id={todo.text}>
       <h3>{todo.text}</h3>
-      <span className="due-date">Due Date: {todo.time}</span>
+      <span className="due-date">
+        Due Date:{" "}
+        {todo.time + todo.date === "" ? " None" : todo.time + " " + todo.date}
+      </span>
       <div className="buttons-container">
         {todo.isCompleted ? null : (
           <button
