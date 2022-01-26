@@ -32,9 +32,3 @@ export const removeCompletedTodos = () => ({
   type: REMOVE_COMPLETED_TODOS,
   payload: null,
 });
-
-export const CHECK_OVERDUE_TODOS = "CHECK_OVERDUE_TODOS";
-export const checkOverdueTodos = () => ({
-  type: CHECK_OVERDUE_TODOS,
-  payload: null,
-});
